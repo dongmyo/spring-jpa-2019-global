@@ -1,8 +1,10 @@
 package com.nhnent.edu.spring_jpa.entity;
 
+import com.nhnent.edu.spring_jpa.IntegrationTest;
 import com.nhnent.edu.spring_jpa.config.DatabaseConfig;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -11,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+// TODO : #4 integation test는 IntegrationTest marker를 @Category에 적용.
+@Category(IntegrationTest.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { DatabaseConfig.class })
 @Transactional

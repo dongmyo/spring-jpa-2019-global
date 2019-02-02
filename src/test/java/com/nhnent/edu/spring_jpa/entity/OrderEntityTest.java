@@ -1,8 +1,10 @@
 package com.nhnent.edu.spring_jpa.entity;
 
+import com.nhnent.edu.spring_jpa.IntegrationTest;
 import com.nhnent.edu.spring_jpa.config.DatabaseConfig;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -12,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+// TODO : #5 integation test는 IntegrationTest marker를 @Category에 적용.
+@Category(IntegrationTest.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { DatabaseConfig.class })
 @Transactional
@@ -19,7 +23,6 @@ public class OrderEntityTest {
     @PersistenceContext
     private EntityManager entityManager;
 
-    // TODO : #2 `Order` Entity 클래스를 작성해서 아래 테스트를 통과하세요.
     @Test
     public void test() throws Exception {
         Order order1 = entityManager.find(Order.class, 1001L);

@@ -123,6 +123,39 @@
                 </configuration>
             </plugin>
 
+            <!-- TODO : #3 unit test와 integration test를 위한 maven plugin 적용 -->
+            <!-- unit test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <excludedGroups>com.nhnent.edu.spring_jpa.IntegrationTest</excludedGroups>
+                </configuration>
+            </plugin>
+
+            <!-- integration test -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <groups>com.nhnent.edu.spring_jpa.IntegrationTest</groups>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

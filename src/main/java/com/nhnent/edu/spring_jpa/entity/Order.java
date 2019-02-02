@@ -27,7 +27,6 @@ public class Order {
     private Date orderDate;
 
 
-    // TODO : #3 Order-OrderItem 연관관계 맵핑.
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderItem> orderItems = new ArrayList<>();
 

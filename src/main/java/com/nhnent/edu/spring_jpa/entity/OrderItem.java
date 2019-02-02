@@ -31,12 +31,10 @@ public class OrderItem {
     private Integer quantity;
 
 
-    // TODO : #1 OrderItem-Item 연관관계 맵핑.
     @JoinColumn(name = "item_id")
     @ManyToOne
     private Item item;
 
-    // TODO : #2 OrderItem-Order 연관관계 맵핑.
     @JoinColumn(name = "order_id", insertable = false, updatable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;

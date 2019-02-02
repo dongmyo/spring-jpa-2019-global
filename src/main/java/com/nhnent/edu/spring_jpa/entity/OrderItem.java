@@ -37,7 +37,7 @@ public class OrderItem {
     private Item item;
 
     // TODO : #2 OrderItem-Order 연관관계 맵핑.
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_id", insertable = false, updatable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;
 

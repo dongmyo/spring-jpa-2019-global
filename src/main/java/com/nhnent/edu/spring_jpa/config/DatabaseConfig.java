@@ -26,7 +26,8 @@ public class DatabaseConfig {
         BasicDataSource dataSource = new BasicDataSource();
 
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:~/spring-jpa;INIT=RUNSCRIPT FROM 'classpath:/script/schema.sql'");
+        dataSource.setUrl("jdbc:h2:~/spring-jpa;DATABASE_TO_UPPER=false;"
+                          + "INIT=RUNSCRIPT FROM 'classpath:/script/schema.sql'");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
 

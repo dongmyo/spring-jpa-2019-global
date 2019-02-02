@@ -1,5 +1,7 @@
 package com.nhnent.edu.spring_jpa.repository;
 
-// TODO : #2 OrderRepository를 작성하세요.
-public interface OrderRepository {
+import com.nhnent.edu.spring_jpa.entity.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Order, Long> {
 }

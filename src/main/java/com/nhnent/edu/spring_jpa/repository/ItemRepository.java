@@ -8,7 +8,6 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.util.Collection;
 import java.util.List;
 
-// TODO : #1 ItemRepository가 QuerydslPredicateExecutor를 상속받도록 수정.
 public interface ItemRepository extends QuerydslPredicateExecutor<Item>, JpaRepository<Item, Long> {
     // select * from Items where item_name like '%{itemName}%'
     Item findByItemNameLike(String itemName);

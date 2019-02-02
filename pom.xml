@@ -123,7 +123,6 @@
                 </configuration>
             </plugin>
 
-            <!-- TODO : #3 unit test와 integration test를 위한 maven plugin 적용 -->
             <!-- unit test -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

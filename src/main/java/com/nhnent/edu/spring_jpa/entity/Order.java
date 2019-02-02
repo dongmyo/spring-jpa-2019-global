@@ -1,14 +1,9 @@
 package com.nhnent.edu.spring_jpa.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
  * create table if not exists `Orders` (
@@ -32,6 +27,11 @@ public class Order {
     private Date orderDate;
 
 
+    // TODO : #3 Order-OrderItem 연관관계 맵핑.
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+    private List<OrderItem> orderItems = new ArrayList<>();
+
+
     public Long getOrderId() {
         return orderId;
     }
@@ -47,4 +47,13 @@ public class Order {
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
 }

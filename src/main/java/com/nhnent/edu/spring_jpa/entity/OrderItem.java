@@ -4,12 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
-// TODO : #1 OrderItem Entity 클래스.
 /*
 create table if not exists `OrderItems` (
   `order_id` bigint not null,
@@ -27,10 +28,18 @@ public class OrderItem {
     @EmbeddedId
     private Pk pk;
 
-    @Column(name = "item_id")
-    private Long itemId;
-
     private Integer quantity;
+
+
+    // TODO : #1 OrderItem-Item 연관관계 맵핑.
+    @JoinColumn(name = "item_id")
+    @ManyToOne
+    private Item item;
+
+    // TODO : #2 OrderItem-Order 연관관계 맵핑.
+    @JoinColumn(name = "order_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Order order;
 
 
     public Pk getPk() {
@@ -41,20 +50,28 @@ public class OrderItem {
         this.pk = pk;
     }
 
-    public Long getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
 

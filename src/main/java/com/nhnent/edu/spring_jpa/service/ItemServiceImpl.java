@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO : #9 item service
 @Service
 public class ItemServiceImpl implements ItemService {
     private final ItemRepository itemRepository;

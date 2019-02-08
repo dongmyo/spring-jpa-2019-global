@@ -7,7 +7,6 @@
     <groupId>com.nhnent.edu</groupId>
     <artifactId>spring-jpa</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!-- TODO : #1 jar -> war -->
     <packaging>war</packaging>
 
     <properties>
@@ -120,7 +119,6 @@
             <version>4.2.1</version>
         </dependency>
 
-        <!-- TODO : #2 add web-related libraries -->
         <!-- spring-mvc -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -228,7 +226,6 @@
                 </executions>
             </plugin>
 
-            <!-- TODO : #3 web-related plugins -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

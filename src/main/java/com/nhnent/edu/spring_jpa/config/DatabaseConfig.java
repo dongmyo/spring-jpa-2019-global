@@ -22,9 +22,7 @@ import java.util.Properties;
 
 @EnableJpaRepositories(basePackageClasses = RepositoryBase.class)
 @EnableTransactionManagement
-// TODO : #5 @EnableSpringDataWebSupport
 @EnableSpringDataWebSupport
-// TODO : #6 component scan
 @ComponentScan(basePackages = "com.nhnent.edu.spring_jpa", excludeFilters = @ComponentScan.Filter(Controller.class))
 @Configuration
 public class DatabaseConfig {

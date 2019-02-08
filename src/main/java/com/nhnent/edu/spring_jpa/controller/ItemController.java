@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-// TODO : #8 rest controller
 @RestController
 @RequestMapping("/items")
 public class ItemController {

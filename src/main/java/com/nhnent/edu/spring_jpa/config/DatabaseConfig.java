@@ -3,13 +3,16 @@ package com.nhnent.edu.spring_jpa.config;
 import com.nhnent.edu.spring_jpa.repository.RepositoryBase;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -19,6 +22,10 @@ import java.util.Properties;
 
 @EnableJpaRepositories(basePackageClasses = RepositoryBase.class)
 @EnableTransactionManagement
+// TODO : #5 @EnableSpringDataWebSupport
+@EnableSpringDataWebSupport
+// TODO : #6 component scan
+@ComponentScan(basePackages = "com.nhnent.edu.spring_jpa", excludeFilters = @ComponentScan.Filter(Controller.class))
 @Configuration
 public class DatabaseConfig {
     @Bean

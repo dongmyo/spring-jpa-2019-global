@@ -7,7 +7,8 @@
     <groupId>com.nhnent.edu</groupId>
     <artifactId>spring-jpa</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <!-- TODO : #1 jar -> war -->
+    <packaging>war</packaging>
 
     <properties>
         <jdk-version>1.8</jdk-version>
@@ -18,7 +19,7 @@
         <spring-framework.version>5.1.4.RELEASE</spring-framework.version>
         <spring-data.version>Lovelace-SR4</spring-data.version>
 
-        <hibernate.version>5.4.0.Final</hibernate.version>
+        <hibernate.version>5.3.7.Final</hibernate.version>
 
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -119,6 +120,46 @@
             <version>4.2.1</version>
         </dependency>
 
+        <!-- TODO : #2 add web-related libraries -->
+        <!-- spring-mvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!-- web dependencies -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- jackson2 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -185,6 +226,25 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- TODO : #3 web-related plugins -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+
+            <!-- embedded tomcat7 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
             </plugin>
 
         </plugins>

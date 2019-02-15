@@ -20,6 +20,7 @@ public class OrderEntityTest {
     private EntityManager entityManager;
 
     // TODO : #2 `Order` Entity 클래스를 작성해서 아래 테스트를 통과하세요.
+    // TODO : #2 if you've completed the `Order` Entity class, you can pass the following test case.   
     @Test
     public void test() throws Exception {
         Order order1 = entityManager.find(Order.class, 1001L);

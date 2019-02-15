@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 // TODO : #5 integation test는 IntegrationTest marker를 @Category에 적용.
+// TODO : #5 apply @Category with IntegrationTest marker interface for integration test usage.
 @Category(IntegrationTest.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { DatabaseConfig.class })

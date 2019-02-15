@@ -124,6 +124,7 @@
             </plugin>
 
             <!-- TODO : #3 unit test와 integration test를 위한 maven plugin 적용 -->
+            <!-- TODO : #3 maven plugins for each unit test and integration test -->
             <!-- unit test -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
-// TODO : #1 OrderItem Entity 클래스.
+// TODO : #1 `OrderItem` Entity class.
 /*
 create table if not exists `OrderItems` (
   `order_id` bigint not null,

@@ -32,11 +32,13 @@ public class OrderItem {
 
 
     // TODO : #1 OrderItem-Item 연관관계 맵핑.
+    // TODO : #1 OrderItem-Item association mapping.
     @JoinColumn(name = "item_id")
     @ManyToOne
     private Item item;
 
     // TODO : #2 OrderItem-Order 연관관계 맵핑.
+    // TODO : #2 OrderItem-Order association mapping.
     @JoinColumn(name = "order_id", insertable = false, updatable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;

@@ -28,6 +28,7 @@ public class Order {
 
 
     // TODO : #3 Order-OrderItem 연관관계 맵핑.
+    // TODO : #3 Order-OrderItem association mapping.
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderItem> orderItems = new ArrayList<>();
 

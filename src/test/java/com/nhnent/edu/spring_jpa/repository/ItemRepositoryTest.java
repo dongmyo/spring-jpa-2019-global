@@ -28,6 +28,7 @@ public class ItemRepositoryTest {
 
 
     // TODO : #2 ItemRepository 인터페이스의 @Question 어노테이션이 붙은 메서드의 이름을 수정해서 아래 테스트를 통과하세요.
+    // TODO : #2 if you've modified the ItemRepository right, you can pass the following test case.
     @Test
     public void test() throws Exception {
         Class<?> clazz = Arrays.stream(itemRepository.getClass().getInterfaces())

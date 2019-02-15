@@ -24,6 +24,7 @@ public class OrderRepositoryTest {
     private OrderRepository orderRepository;
 
     // TODO : #3 OrderRepository 인터페이스를 작성해서 아래 테스트를 통과하세요.
+    // TODO : #3 if you've completed OrderRepository interface, you can pass the following test case.
     @Test
     public void test() throws Exception {
         Optional<Order> order = ReflectionTestUtils.invokeMethod(orderRepository, "findById", 1001L);

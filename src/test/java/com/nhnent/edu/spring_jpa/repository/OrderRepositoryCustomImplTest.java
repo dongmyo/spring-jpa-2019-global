@@ -25,7 +25,9 @@ public class OrderRepositoryCustomImplTest {
 
     @Test
     public void test() throws Exception {
-        // TODO : #7 6번 항목까지 모두 완료하였으면 아래 주석을 해제해서 본 테스트를 통과시키세요.
+        // TODO : #7 실습 - 6번 항목까지 모두 완료하였으면 아래 주석을 해제해서 본 테스트를 통과시키세요.
+    	// TODO : #7 practice - if you've finished the previous todos, uncomment the following lines
+    	//        and pass this test case. 
         /*
         List<Item> items1 = orderRepository.getItemsHavingOrderItemQuantityGreaterThan(4);
         Assert.assertEquals(1, items1.size());

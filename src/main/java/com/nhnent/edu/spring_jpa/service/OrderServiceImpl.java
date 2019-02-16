@@ -23,7 +23,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderDto> getOrders(Pageable pageable) {
-        // TODO : #3 orderRepository를 이용해서 pagination 기능을 구현하세요.
+        // TODO : #3 실습 - orderRepository를 이용해서 pagination 기능을 구현하세요.
+    	// TODO : #3 practice - implement pagination using orderRepository.
         Page<Order> orderPage = null;
 
         return orderPage.getContent()

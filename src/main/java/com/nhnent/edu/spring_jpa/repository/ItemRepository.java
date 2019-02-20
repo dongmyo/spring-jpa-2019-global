@@ -22,11 +22,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // delete from Items where price between {price1} and {price2}
     void deleteByPriceBetween(long price1, long price2);
 
-    // TODO : #1 실습 - 다음 메서드의 이름을 아래 쿼리 결과가 나오도록 이름 규칙에 맞춰 수정하세요.
-    //        select * from Items where price in (...)
-    // TODO : #1 practice - modify the following method name to query like
-    //        select * from Items where price in (...)
     @Question
-    List<Item> changeThisMethodName(Collection<Long> prices);
+    List<Item> findByPriceIn(Collection<Long> prices);
 
 }

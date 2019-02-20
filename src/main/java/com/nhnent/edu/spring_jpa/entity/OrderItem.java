@@ -1,13 +1,6 @@
 package com.nhnent.edu.spring_jpa.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -22,6 +15,16 @@ create table if not exists `OrderItems` (
 );
 
  */
+// TODO : #1 define a entity graph using @NamedEntityGraph.
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "orderItemWithItem", attributeNodes = {
+                @NamedAttributeNode("item")
+        }),
+        @NamedEntityGraph(name = "orderItemWithItemAndOrder", attributeNodes = {
+                @NamedAttributeNode("item"),
+                @NamedAttributeNode("order")
+        })
+})
 @Entity
 @Table(name = "OrderItems")
 public class OrderItem {
@@ -32,7 +35,7 @@ public class OrderItem {
 
 
     @JoinColumn(name = "item_id")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)          // LAZY!!!
     private Item item;
 
     @JoinColumn(name = "order_id", insertable = false, updatable = false)
